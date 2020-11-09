@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/DCList.h
+iostream
+-
+malloc.h
+-
+assert.h
+-
+
+C:/Users/CORDI/Desktop/Study_DateStructure/DCList/main.cpp
+DCList.h
+C:/Users/CORDI/Desktop/Study_DateStructure/DCList/DCList.h
+

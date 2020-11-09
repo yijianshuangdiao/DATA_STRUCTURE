@@ -1,0 +1,2 @@
+C:\mingw64\bin\ar.exe qc libLIB_SRCS.a  CMakeFiles/LIB_SRCS.dir/DCList.cpp.obj
+C:\mingw64\bin\ranlib.exe libLIB_SRCS.a
