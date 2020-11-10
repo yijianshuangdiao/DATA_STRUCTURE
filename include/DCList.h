@@ -4,6 +4,7 @@
 #include<iostream>
 #include<malloc.h>
 #include<assert.h>
+
 using namespace std; 
 
 template<typename ElemType>class ListNode //带模板结点类
@@ -106,9 +107,10 @@ void DCList<ElemType>::PushFront(const ElemType date) //链表头插数据
     ListNode<ElemType>* s = new ListNode<ElemType>;
 	s->date = date;
     ListNode<ElemType> *p = Head->next;
-    if(p->next==Head)
+    if(p==Head)
 	{
 		PushBack(date);
+		return;
 	}
     s->next = p;
     s->prio = p->prio;
@@ -147,5 +149,7 @@ void DCList<ElemType>::PopFront()const //链表头删数据
 	p->next->prio = p->prio;
 	free(p);
 }
+
+
 
 #endif
