@@ -14,8 +14,8 @@ int main()
         cout << "*  [1]头插数据     [2]尾插数据   *" << endl;
         cout << "*  [3]头部删除     [4]尾部删除   *" << endl;
         cout << "*  [5]按位插入     [6]按值插入   *" << endl;
-        cout << "*  [7]逆置链表     [8]自动排序  *" << endl;
-        cout << "*  [9*]按值删除    [10*]按位删除 *" << endl;
+        cout << "*  [7]逆置链表     [8]自动排序   *" << endl;
+        cout << "*  [9]按值删除     [10]按位删除  *" << endl;
         cout << "**********************************" << endl;
         cout << "目前缓存链表为：";
         mylist.ShowList();
@@ -61,6 +61,18 @@ int main()
             break;
         case 8:
             mylist.Sort(mylist);
+            break;
+        case 9:
+            cout << "请输入要删除的值>>>>";
+            cin >> date;
+            if(!mylist.PopVal(mylist, date))
+                cout << "删除失败";
+            break;
+        case 10:
+            cout << "请输入要删除的位置>>>>";
+            cin >> pos;
+            if(!mylist.PopPos(mylist, pos))
+                cout << "删除失败";
             break;
         default:
             cout << "选择错误！" << endl;
