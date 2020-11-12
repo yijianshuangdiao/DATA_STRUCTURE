@@ -2,8 +2,9 @@
 
 int main()
 {
-    DCList<int> mylist;
-    int select = 1;
+    DCList<int> mylist; //链表实例化
+    int select = 1; //保存功能选择开关
+    int pos = 0; //保存数据位置
     int leng = 0; //保存链表长度
     int date = 0; //保存输入数据（可自定义修改类型）
     while (select!=0)
@@ -12,8 +13,8 @@ int main()
         cout << "**********************************" << endl;
         cout << "*  [1]头插数据     [2]尾插数据   *" << endl;
         cout << "*  [3]头部删除     [4]尾部删除   *" << endl;
-        cout << "*  [5*]按位插入    [6*]按值插入  *" << endl;
-        cout << "*  [7*]逆置链表    [8*]自动排序  *" << endl;
+        cout << "*  [5]按位插入     [6]按值插入   *" << endl;
+        cout << "*  [7]逆置链表     [8]自动排序  *" << endl;
         cout << "*  [9*]按值删除    [10*]按位删除 *" << endl;
         cout << "**********************************" << endl;
         cout << "目前缓存链表为：";
@@ -44,6 +45,22 @@ int main()
             mylist.PopBack();
             break;
         case 5:
+            cout << "请输入要插入的数据>>>>";
+            cin >> date;
+            cout << "请输入要插入的位置>>>>";
+            cin >> pos;
+            mylist.InsertPos(mylist, date, pos);
+            break;
+        case 6:
+            cout << "请输入要插入的值>>>>";
+            cin >> date;
+            mylist.InsertVal(date);
+            break;
+        case 7:
+            mylist.Reverse(mylist);
+            break;
+        case 8:
+            mylist.Sort(mylist);
             break;
         default:
             cout << "选择错误！" << endl;
