@@ -1,11 +1,9 @@
-#ifndef _DCLIST_
-#define _DCLIST_
-
+#pragma once
 #include<iostream>
 #include<malloc.h>
 #include<assert.h>
 
-using namespace std; 
+using namespace std;
 
 template<typename ElemType>class ListNode //带模板结点类
 {
@@ -17,25 +15,25 @@ public:
 
 template<typename ElemType>class DCList :public ListNode<ElemType> //带模板并继承ListNode的链表类
 {
-public:
+private:
 	ListNode<ElemType>* Head; //头结点
 public:
 	DCList(); //默认构造函数
 	~DCList(); //析构函数
 	void InsertVal(const ElemType key); //按值插入
-	bool InsertPos(const DCList<ElemType> &list,const ElemType key, int pos); //按位插入
-	bool Reverse(const DCList<ElemType> &list); //逆置链表
-	bool Sort(const DCList<ElemType> &list); //链表排序
+	bool InsertPos(const DCList<ElemType>& list, const ElemType key, const int pos); //按位插入
+	bool Reverse(const DCList<ElemType>& list); //逆置链表
+	bool Sort(const DCList<ElemType>& list); //链表排序
 	void PushBack(const ElemType date); //尾插数据
-    void PushFront(const ElemType date); //头插数据
+	void PushFront(const ElemType date); //头插数据
 	void PopBack() const; //链表尾删数据
-	bool PopVal(const DCList<ElemType> &list, const ElemType key); //按值删除(递归删除)
-	bool PopPos(const DCList<ElemType> &list, const int pos); //按位删除
+	bool PopVal(const ElemType key); //按值删除(递归删除)
+	bool PopPos(const DCList<ElemType>& list, const int pos); //按位删除
 	void PopFront() const; //链表头删数据
 	void ShowList() const; //打印链表
 	int length() const;	  //求链表长度
 
-	void ClearDCList() const; //重置链表为空
+	virtual void ClearDCList() const; //重置链表为空
 };
 
 template<typename ElemType>
@@ -97,43 +95,43 @@ void DCList<ElemType>::ShowList()const //打印链表
 template<typename ElemType>
 int DCList<ElemType>::length()const //求链表长度
 {
-    ListNode<ElemType> *p = Head->next;
-    int k = 0; //记录遍历次数
-    while (p!=Head)
-    {
-        p = p->next;
-        k++;
-    }
-    return k;
+	ListNode<ElemType>* p = Head->next;
+	int k = 0; //记录遍历次数
+	while (p != Head)
+	{
+		p = p->next;
+		k++;
+	}
+	return k;
 }
 
 template<typename ElemType>
 void DCList<ElemType>::PushFront(const ElemType date) //链表头插数据
 {
-    ListNode<ElemType>* s = new ListNode<ElemType>;
+	ListNode<ElemType>* s = new ListNode<ElemType>;
 	s->date = date;
-    ListNode<ElemType> *p = Head->next;
-    if(p==Head)
+	ListNode<ElemType>* p = Head->next;
+	if (p == Head)
 	{
 		PushBack(date);
 		return;
 	}
-    s->next = p;
-    s->prio = p->prio;
-    p->prio->next = s;
+	s->next = p;
+	s->prio = p->prio;
+	p->prio->next = s;
 	p->prio = s;
 }
 
 template<typename ElemType>
 void DCList<ElemType>::PopBack()const //链表尾删数据
 {
-	ListNode<ElemType> *p = Head->next;
-	if(p==Head)
+	ListNode<ElemType>* p = Head->next;
+	if (p == Head)
 	{
 		cout << "链表已空" << endl;
 		return;
 	}
-	while(p->next!=Head)
+	while (p->next != Head)
 	{
 		p = p->next;
 	}
@@ -145,8 +143,8 @@ void DCList<ElemType>::PopBack()const //链表尾删数据
 template<typename ElemType>
 void DCList<ElemType>::PopFront()const //链表头删数据
 {
-	ListNode<ElemType> *p = Head->next;
-	if(p==Head)
+	ListNode<ElemType>* p = Head->next;
+	if (p == Head)
 	{
 		cout << "链表已空" << endl;
 		return;
@@ -160,9 +158,9 @@ template<typename ElemType>
 void DCList<ElemType>::InsertVal(const ElemType key) //按值插入
 {
 	ListNode<ElemType>* s = new ListNode<ElemType>;
-	ListNode<ElemType> *p = Head->next;
+	ListNode<ElemType>* p = Head->next;
 	s->date = key;
-	while (p!=Head && p->date<s->date)
+	while (p != Head && p->date < s->date)
 	{
 		p = p->next;
 	}
@@ -173,12 +171,12 @@ void DCList<ElemType>::InsertVal(const ElemType key) //按值插入
 }
 
 template<typename ElemType>
-bool DCList<ElemType>::InsertPos(const DCList<ElemType> &list, const ElemType key,int pos) //按位插入
+bool DCList<ElemType>::InsertPos(const DCList<ElemType>& list, const ElemType key, const int pos) //按位插入
 {
 	if (pos<0 || pos>list.length())
 		return false;
-	ListNode<ElemType> *s = new ListNode<ElemType>;
-	ListNode<ElemType> *p = Head->next;
+	ListNode<ElemType>* s = new ListNode<ElemType>;
+	ListNode<ElemType>* p = Head->next;
 	s->date = key;
 	for (int i = 0; i < pos; i++)
 	{
@@ -192,15 +190,15 @@ bool DCList<ElemType>::InsertPos(const DCList<ElemType> &list, const ElemType ke
 }
 
 template<typename ElemType>
-bool DCList<ElemType>::Reverse(const DCList<ElemType> &list) //逆置链表
+bool DCList<ElemType>::Reverse(const DCList<ElemType>& list) //逆置链表
 {
-	if (list.length()==0 || list.length()==1)
+	if (list.length() == 0 || list.length() == 1)
 		return false;
-	ListNode<ElemType> *r, *q, *p = Head->next;
+	ListNode<ElemType>* r, * q, * p = Head->next;
 	q = p->next;
 	p->next = Head;
 	Head->prio = p;
-	while (q!=Head)
+	while (q != Head)
 	{
 		r = Head->next;
 		p = q;
@@ -214,20 +212,20 @@ bool DCList<ElemType>::Reverse(const DCList<ElemType> &list) //逆置链表
 }
 
 template<typename ElemType>
-bool DCList<ElemType>::Sort(const DCList<ElemType> &list) //自动排序
+bool DCList<ElemType>::Sort(const DCList<ElemType>& list) //自动排序
 {
-	if (list.length()==0 || list.length()==1)
+	if (list.length() == 0 || list.length() == 1)
 		return false;
-	ListNode<ElemType> *r, *q, *p = Head->next;
+	ListNode<ElemType>* r, * q, * p = Head->next;
 	q = p->next;
 	p->next = Head;
 	p->next->prio = p;
-	while (q!=Head)
+	while (q != Head)
 	{
 		r = Head;
 		p = q;
 		q = p->next;
-		while (r->next!=Head && p->date>r->next->date)
+		while (r->next != Head && p->date > r->next->date)
 		{
 			r = r->next;
 		}
@@ -240,14 +238,14 @@ bool DCList<ElemType>::Sort(const DCList<ElemType> &list) //自动排序
 }
 
 template<typename ElemType>
-bool DCList<ElemType>::PopVal(const DCList<ElemType> &list, const ElemType key) //按值删除(递归删除)
+bool DCList<ElemType>::PopVal(const ElemType key) //按值删除(递归删除)
 {
-	ListNode<ElemType> *p = Head->next;
-	while (p!=Head && p->date!=key)
+	ListNode<ElemType>* p = Head->next;
+	while (p != Head && p->date != key)
 	{
 		p = p->next;
 	}
-	if (p==Head)
+	if (p == Head)
 	{
 		return false;
 	}
@@ -256,19 +254,19 @@ bool DCList<ElemType>::PopVal(const DCList<ElemType> &list, const ElemType key) 
 		p->prio->next = p->next;
 		p->next->prio = p->prio;
 		free(p);
-		if(this->PopVal(list,key))
+		if (this->PopVal(key))
 			return true;
 	}
 	return true;
 }
 
 template<typename ElemType>
-bool DCList<ElemType>::PopPos(const DCList<ElemType> &list, const int pos) //按位删除
+bool DCList<ElemType>::PopPos(const DCList<ElemType>& list, const int pos) //按位删除
 {
-	if (pos<0 || pos>list.length())
+	if (pos<0 || pos>list.length() - 1)
 		return false;
-	ListNode<ElemType> *p = Head;
-	for (int i = 0; i < pos; i++)
+	ListNode<ElemType>* p = Head;
+	for (int i = 0; i <= pos; i++)
 	{
 		p = p->next;
 	}
@@ -277,6 +275,3 @@ bool DCList<ElemType>::PopPos(const DCList<ElemType> &list, const int pos) //按
 	free(p);
 	return true;
 }
-
-
-#endif
