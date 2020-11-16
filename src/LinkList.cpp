@@ -1,15 +1,15 @@
-#include"DCList.h"
+#include"LinkList.h"
 
-void DCList_test() //双循环链表测试程序
+void LinkList_test()
 {
-	DCList::DCList<int> mylist; //链表实例化
+    LinkList::LinkList<int> mylist; //链表实例化
 	int select = 1; //保存功能选择开关
 	int pos = 0; //保存数据位置
 	int leng = 0; //保存链表长度
 	int data = 0; //保存输入数据（可自定义修改类型）
 	while (select != 0)
 	{
-		cout << "        双循环链表测试程序        " << endl;
+		cout << "        单循环链表测试程序        " << endl;
 		cout << "**********************************" << endl;
 		cout << "*  [1]头插数据     [2]尾插数据   *" << endl;
 		cout << "*  [3]头部删除     [4]尾部删除   *" << endl;
