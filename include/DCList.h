@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _DCLIST_H_
+#define _DCLIST_H_
+
 #include<iostream>
 #include<malloc.h>
 #include<assert.h>
@@ -275,3 +277,5 @@ bool DCList<ElemType>::PopPos(const DCList<ElemType>& list, const int pos) //按
 	free(p);
 	return true;
 }
+
+#endif
