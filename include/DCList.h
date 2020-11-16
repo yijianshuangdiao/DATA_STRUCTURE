@@ -1,3 +1,7 @@
+/*
+ * filename:DCList.h
+ * description:双循环链表
+ */
 #ifndef _DCLIST_H_
 #define _DCLIST_H_
 
