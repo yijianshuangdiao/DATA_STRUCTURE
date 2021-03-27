@@ -26,6 +26,11 @@ namespace SeqList
     private:
         ElemType data[MAXSIZE];         //存放数据元素的数组
         int lenght;                     //记录顺序表长度
+
+    public:
+        void DelDup(SeqList<ElemType> &L);               //重复元素删除
+        bool DelValue(SeqList<ElemType> &L, ElemType x); //删除指定元素
+
     };
 } // namespace SeqList
 
@@ -61,7 +66,7 @@ ElemType SeqList::SeqList<ElemType>::Delete(int i){
         throw "参数错误";
     for (int j = i - 1; j < lenght; j++)
     {
-        data[j] = data[j + 1];
+        data[j] = data[j + 1];  
     }
     lenght--;
     return data[i - 1];
@@ -101,9 +106,31 @@ template<typename ElemType>
 void SeqList::SeqList<ElemType>::PrintList(){
     for (int i = 0; i < lenght;i++)
     {
-        cout << data[i] << " ";
+        std::cout << data[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
+}
+
+template<typename ElemType>
+void SeqList::SeqList<ElemType>::DelDup(SeqList<ElemType> &L){
+    
+}
+
+template<typename ElemType>
+bool SeqList::SeqList<ElemType>::DelValue(SeqList<ElemType> &L, ElemType x){
+    int j = 0;
+    for (int i = 0; i < L.lenght;i++)
+    {
+        if(data[i]!=x)
+        {
+            data[j] = data[i];
+            j++;
+        }
+    }
+    if(j==L.lenght)
+        return false;
+    L.lenght = j;
+    return true;
 }
 
 #endif

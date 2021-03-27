@@ -205,6 +205,33 @@ LinkStack.cpp.s:
 	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build && $(MAKE) -f src\CMakeFiles\LIB_SRCS.dir\build.make src/CMakeFiles/LIB_SRCS.dir/LinkStack.cpp.s
 .PHONY : LinkStack.cpp.s
 
+SeqList.obj: SeqList.cpp.obj
+
+.PHONY : SeqList.obj
+
+# target to build an object file
+SeqList.cpp.obj:
+	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build && $(MAKE) -f src\CMakeFiles\LIB_SRCS.dir\build.make src/CMakeFiles/LIB_SRCS.dir/SeqList.cpp.obj
+.PHONY : SeqList.cpp.obj
+
+SeqList.i: SeqList.cpp.i
+
+.PHONY : SeqList.i
+
+# target to preprocess a source file
+SeqList.cpp.i:
+	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build && $(MAKE) -f src\CMakeFiles\LIB_SRCS.dir\build.make src/CMakeFiles/LIB_SRCS.dir/SeqList.cpp.i
+.PHONY : SeqList.cpp.i
+
+SeqList.s: SeqList.cpp.s
+
+.PHONY : SeqList.s
+
+# target to generate assembly for a file
+SeqList.cpp.s:
+	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build && $(MAKE) -f src\CMakeFiles\LIB_SRCS.dir\build.make src/CMakeFiles/LIB_SRCS.dir/SeqList.cpp.s
+.PHONY : SeqList.cpp.s
+
 SeqStack.obj: SeqStack.cpp.obj
 
 .PHONY : SeqStack.obj
@@ -250,6 +277,9 @@ help:
 	@echo ... LinkStack.obj
 	@echo ... LinkStack.i
 	@echo ... LinkStack.s
+	@echo ... SeqList.obj
+	@echo ... SeqList.i
+	@echo ... SeqList.s
 	@echo ... SeqStack.obj
 	@echo ... SeqStack.i
 	@echo ... SeqStack.s

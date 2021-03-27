@@ -98,10 +98,24 @@ src/CMakeFiles/LIB_SRCS.dir/LinkStack.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LIB_SRCS.dir/LinkStack.cpp.s"
 	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\src && C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\src\LinkStack.cpp -o CMakeFiles\LIB_SRCS.dir\LinkStack.cpp.s
 
+src/CMakeFiles/LIB_SRCS.dir/SeqList.cpp.obj: src/CMakeFiles/LIB_SRCS.dir/flags.make
+src/CMakeFiles/LIB_SRCS.dir/SeqList.cpp.obj: src/CMakeFiles/LIB_SRCS.dir/includes_CXX.rsp
+src/CMakeFiles/LIB_SRCS.dir/SeqList.cpp.obj: ../src/SeqList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/LIB_SRCS.dir/SeqList.cpp.obj"
+	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\src && C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\LIB_SRCS.dir\SeqList.cpp.obj -c C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\src\SeqList.cpp
+
+src/CMakeFiles/LIB_SRCS.dir/SeqList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LIB_SRCS.dir/SeqList.cpp.i"
+	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\src && C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\src\SeqList.cpp > CMakeFiles\LIB_SRCS.dir\SeqList.cpp.i
+
+src/CMakeFiles/LIB_SRCS.dir/SeqList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LIB_SRCS.dir/SeqList.cpp.s"
+	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\src && C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\src\SeqList.cpp -o CMakeFiles\LIB_SRCS.dir\SeqList.cpp.s
+
 src/CMakeFiles/LIB_SRCS.dir/SeqStack.cpp.obj: src/CMakeFiles/LIB_SRCS.dir/flags.make
 src/CMakeFiles/LIB_SRCS.dir/SeqStack.cpp.obj: src/CMakeFiles/LIB_SRCS.dir/includes_CXX.rsp
 src/CMakeFiles/LIB_SRCS.dir/SeqStack.cpp.obj: ../src/SeqStack.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/LIB_SRCS.dir/SeqStack.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/LIB_SRCS.dir/SeqStack.cpp.obj"
 	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\src && C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\LIB_SRCS.dir\SeqStack.cpp.obj -c C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\src\SeqStack.cpp
 
 src/CMakeFiles/LIB_SRCS.dir/SeqStack.cpp.i: cmake_force
@@ -117,6 +131,7 @@ LIB_SRCS_OBJECTS = \
 "CMakeFiles/LIB_SRCS.dir/DCList.cpp.obj" \
 "CMakeFiles/LIB_SRCS.dir/LinkList.cpp.obj" \
 "CMakeFiles/LIB_SRCS.dir/LinkStack.cpp.obj" \
+"CMakeFiles/LIB_SRCS.dir/SeqList.cpp.obj" \
 "CMakeFiles/LIB_SRCS.dir/SeqStack.cpp.obj"
 
 # External object files for target LIB_SRCS
@@ -125,10 +140,11 @@ LIB_SRCS_EXTERNAL_OBJECTS =
 src/libLIB_SRCS.a: src/CMakeFiles/LIB_SRCS.dir/DCList.cpp.obj
 src/libLIB_SRCS.a: src/CMakeFiles/LIB_SRCS.dir/LinkList.cpp.obj
 src/libLIB_SRCS.a: src/CMakeFiles/LIB_SRCS.dir/LinkStack.cpp.obj
+src/libLIB_SRCS.a: src/CMakeFiles/LIB_SRCS.dir/SeqList.cpp.obj
 src/libLIB_SRCS.a: src/CMakeFiles/LIB_SRCS.dir/SeqStack.cpp.obj
 src/libLIB_SRCS.a: src/CMakeFiles/LIB_SRCS.dir/build.make
 src/libLIB_SRCS.a: src/CMakeFiles/LIB_SRCS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libLIB_SRCS.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libLIB_SRCS.a"
 	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\src && $(CMAKE_COMMAND) -P CMakeFiles\LIB_SRCS.dir\cmake_clean_target.cmake
 	cd /d C:\Users\CORDI\Desktop\Arithmetic\Study_DataStructure\DATA_STRUCTURE\build\src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\LIB_SRCS.dir\link.txt --verbose=$(VERBOSE)
 

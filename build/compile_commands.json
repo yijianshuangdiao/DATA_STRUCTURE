@@ -21,6 +21,11 @@
 },
 {
   "directory": "C:/Users/CORDI/Desktop/Arithmetic/Study_DataStructure/DATA_STRUCTURE/build/src",
+  "command": "C:\\mingw64\\bin\\g++.exe   @CMakeFiles/LIB_SRCS.dir/includes_CXX.rsp -g   -o CMakeFiles\\LIB_SRCS.dir\\SeqList.cpp.obj -c C:\\Users\\CORDI\\Desktop\\Arithmetic\\Study_DataStructure\\DATA_STRUCTURE\\src\\SeqList.cpp",
+  "file": "C:/Users/CORDI/Desktop/Arithmetic/Study_DataStructure/DATA_STRUCTURE/src/SeqList.cpp"
+},
+{
+  "directory": "C:/Users/CORDI/Desktop/Arithmetic/Study_DataStructure/DATA_STRUCTURE/build/src",
   "command": "C:\\mingw64\\bin\\g++.exe   @CMakeFiles/LIB_SRCS.dir/includes_CXX.rsp -g   -o CMakeFiles\\LIB_SRCS.dir\\SeqStack.cpp.obj -c C:\\Users\\CORDI\\Desktop\\Arithmetic\\Study_DataStructure\\DATA_STRUCTURE\\src\\SeqStack.cpp",
   "file": "C:/Users/CORDI/Desktop/Arithmetic/Study_DataStructure/DATA_STRUCTURE/src/SeqStack.cpp"
 }
