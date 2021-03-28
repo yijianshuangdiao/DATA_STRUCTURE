@@ -1,2 +1,0 @@
-C:\mingw64\bin\ar.exe qc libLIB_SRCS.a  CMakeFiles/LIB_SRCS.dir/DCList.cpp.obj CMakeFiles/LIB_SRCS.dir/LinkList.cpp.obj CMakeFiles/LIB_SRCS.dir/LinkStack.cpp.obj CMakeFiles/LIB_SRCS.dir/SeqList.cpp.obj CMakeFiles/LIB_SRCS.dir/SeqStack.cpp.obj
-C:\mingw64\bin\ranlib.exe libLIB_SRCS.a
