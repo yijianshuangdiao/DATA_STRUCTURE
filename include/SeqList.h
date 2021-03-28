@@ -30,6 +30,7 @@ namespace SeqList
     public:
         void DelDup(SeqList<ElemType> &L);               //重复元素删除
         bool DelValue(SeqList<ElemType> &L, ElemType x); //删除指定元素
+        int DelValue(SeqList<ElemType> &L, ElemType s, ElemType t); //删除顺序表中s到t(s<t)之间的元素
 
     };
 } // namespace SeqList
@@ -130,6 +131,39 @@ bool SeqList::SeqList<ElemType>::DelValue(SeqList<ElemType> &L, ElemType x){
     if(j==L.lenght)
         return false;
     L.lenght = j;
+    return true;
+}
+
+template<typename ElemType>
+int SeqList::SeqList<ElemType>::DelValue(SeqList<ElemType> &L, ElemType s, ElemType t){
+    if(s>=t)
+        return false;
+    int j0 = -1; //假定-1位置即边界位置0
+    int j1 = -1; //假定-1位置即边界位置1
+    for (int i = 0; i < L.lenght;++i)
+    {
+        if(data[i]>s && data[i]<t){
+            j0 = i;
+            while(data[i]>s && data[i]<t){
+                i++;
+            }
+            j1 = i;
+            break;
+        }
+    }
+    if(j0==-1){
+        printf("顺序表中无目标元素\n");
+    }
+    else if(j1==-1){
+        L.lenght == j0;
+    }
+    else{
+        int k = j1 - j0; //待删除的元素个数
+        for (int z = 0; z < L.lenght - j1;++j0,++j1){
+            data[j0] = data[j1];
+        }
+        L.lenght -= k;
+    }
     return true;
 }
 
