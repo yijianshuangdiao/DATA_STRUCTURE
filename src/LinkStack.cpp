@@ -1,11 +1,11 @@
-#include"LinkStack.h"
+#include "LinkStack.h"
 
 void LinkStack_test()
 {
-    LinkStack::LinkStack<int> mylinkstack; //栈实例化
-	int select = 1; //保存功能选择开关
-	int leng = 0; //保存长度
-	int data = 0; //保存输入数据（可自定义修改类型）
+	LinkStack::LinkStack<int> mylinkstack; //栈实例化
+	int select = 1;						   //保存功能选择开关
+	int leng = 0;						   //保存长度
+	int data = 0;						   //保存输入数据（可自定义修改类型）
 	while (select != 0)
 	{
 		cout << "         顺序栈测试程序           " << endl;
@@ -13,11 +13,12 @@ void LinkStack_test()
 		cout << "*    [1]入栈        [2]出栈     *" << endl;
 		cout << "*    [3]打印        [4]清空     *" << endl;
 		cout << "*********************************" << endl;
-        cout << "目前缓存栈为：" << endl;
-        mylinkstack.ShowStack();
+		cout << "目前缓存栈为：" << endl;
+		mylinkstack.ShowStack();
 		cout << "目前缓存栈栈顶元素为：" << mylinkstack.GetTop() << endl;
 		leng = mylinkstack.length();
-		cout << "目前栈长度为：" << leng << "\n" << endl;
+		cout << "目前栈长度为：" << leng << "\n"
+			 << endl;
 		cout << "功能选择（标*为待开发项）>>>>";
 		switch (cin >> select, select)
 		{
@@ -36,8 +37,8 @@ void LinkStack_test()
 			break;
 		case 4:
 			mylinkstack.ClearLinkStack();
-            break;
-        default:
+			break;
+		default:
 			cout << "选择错误！" << endl;
 			break;
 		}

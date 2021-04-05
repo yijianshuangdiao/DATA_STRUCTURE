@@ -1,12 +1,12 @@
-#include"DCList.h"
+#include "DCList.h"
 
 void DCList_test() //双循环链表测试程序
 {
 	DCList::DCList<int> mylist; //链表实例化
-	int select = 1; //保存功能选择开关
-	int pos = 0; //保存数据位置
-	int leng = 0; //保存链表长度
-	int data = 0; //保存输入数据（可自定义修改类型）
+	int select = 1;				//保存功能选择开关
+	int pos = 0;				//保存数据位置
+	int leng = 0;				//保存链表长度
+	int data = 0;				//保存输入数据（可自定义修改类型）
 	while (select != 0)
 	{
 		cout << "        双循环链表测试程序        " << endl;
@@ -20,7 +20,8 @@ void DCList_test() //双循环链表测试程序
 		cout << "目前缓存链表为：";
 		mylist.ShowList();
 		leng = mylist.length();
-		cout << "目前链表长度为：" << leng << "\n" << endl;
+		cout << "目前链表长度为：" << leng << "\n"
+			 << endl;
 		cout << "功能选择（标*为待开发项）>>>>";
 		switch (cin >> select, select)
 		{
