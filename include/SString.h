@@ -21,18 +21,18 @@ namespace SString
     public:
         SString();                                                  //构造函数，初始化串
         void InitSString(const char *S, int len);                   //初始化串
-        void PrintSString(SString& S);                        //打印串
-        bool StrCopy(SString& S, SString& T);                       //串拷贝
-        bool StrEmpty(SString& S);                                  //判空
-        int StrCompare(SString& S, SString& T);                     //串比较
-        int StrLength(SString& S);                                  //求串长
-        void StrConcat(SString& S, SString& S1, SString& S2);       //连接字符串
-        void SubString(SString& S, SString& sub, int pos, int len); //求子串
-        void StrInsert(SString& S, int pos, SString& T);            //指定位置插入字符串
-        void StrDelete(SString& S, int pos, int len);               //删除指定位置指定长度字符串
-        void StrClear(SString& S);                                  //串清除
-        int StrIndex(SString& S, SString& T, int pos);              //
-        void StrReplace(SString& S, SString& T, SString& V);
+        void PrintSString(SString &S);                              //打印串
+        bool StrCopy(SString &S, SString &T);                       //串拷贝
+        bool StrEmpty(SString &S);                                  //判空
+        int StrCompare(SString &S, SString &T);                     //串比较
+        int StrLength(SString &S);                                  //求串长
+        void StrConcat(SString &S, SString &S1, SString &S2);       //连接字符串
+        void SubString(SString &S, SString &sub, int pos, int len); //求子串
+        void StrInsert(SString &S, int pos, SString &T);            //指定位置插入字符串
+        void StrDelete(SString &S, int pos, int len);               //删除指定位置指定长度字符串
+        void StrClear(SString &S);                                  //串清除
+        int StrIndex(SString &S, SString &T, int pos);              //
+        void StrReplace(SString &S, SString &T, SString &V);
     };
 } // namespace SString
 
@@ -44,10 +44,10 @@ SString::SString<ElemType>::SString()
 }
 
 template <typename ElemType>
-void SString::SString<ElemType>::InitSString(const char* S, int len)
+void SString::SString<ElemType>::InitSString(const char *S, int len)
 {
     int i = 0;
-    while(S[i] != '\0')
+    while (S[i] != '\0')
     {
         data[i] = S[i++];
         lenght++;
@@ -56,9 +56,9 @@ void SString::SString<ElemType>::InitSString(const char* S, int len)
 }
 
 template <typename ElemType>
-void SString::SString<ElemType>::PrintSString(SString& S) 
+void SString::SString<ElemType>::PrintSString(SString &S)
 {
-    for (int i = 0; S.data[i] != '\0';i++)
+    for (int i = 0; S.data[i] != '\0'; i++)
     {
         std::cout << S.data[3] << " ";
     }
@@ -66,7 +66,7 @@ void SString::SString<ElemType>::PrintSString(SString& S)
 }
 
 template <typename ElemType>
-bool SString::SString<ElemType>::StrCopy(SString& S, SString& T)
+bool SString::SString<ElemType>::StrCopy(SString &S, SString &T)
 {
     for (int i = 0; i < T.lenght; ++i)
     {
@@ -77,7 +77,7 @@ bool SString::SString<ElemType>::StrCopy(SString& S, SString& T)
 }
 
 template <typename ElemType>
-bool SString::SString<ElemType>::StrEmpty(SString& S)
+bool SString::SString<ElemType>::StrEmpty(SString &S)
 {
     if (S.lenght == 0)
     {
@@ -87,7 +87,7 @@ bool SString::SString<ElemType>::StrEmpty(SString& S)
 }
 
 template <typename ElemType>
-int SString::SString<ElemType>::StrCompare(SString& S, SString& T)
+int SString::SString<ElemType>::StrCompare(SString &S, SString &T)
 {
     int i = 0;
     int result = 0;
@@ -109,13 +109,13 @@ int SString::SString<ElemType>::StrCompare(SString& S, SString& T)
 }
 
 template <typename ElemType>
-int SString::SString<ElemType>::StrLength(SString& S)
+int SString::SString<ElemType>::StrLength(SString &S)
 {
     return S.lenght;
 }
 
 template <typename ElemType>
-void SString::SString<ElemType>::StrConcat(SString& S, SString& S1, SString& S2)
+void SString::SString<ElemType>::StrConcat(SString &S, SString &S1, SString &S2)
 {
     int i = 0;
     while (S1.data[i] != '\0')
