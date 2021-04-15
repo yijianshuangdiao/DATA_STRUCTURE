@@ -5,9 +5,9 @@ void SString_test()
     SString::SString<char> mystring;
     SString::SString<char> mystring1;
     SString::SString<char> mystring2;
-    mystring.InitSString("", 0);
-    mystring1.InitSString("abcd", 4);
-    mystring2.InitSString("efgh", 4);
+    mystring.InitSString("999999");
+    mystring1.InitSString("abcd");
+    mystring2.InitSString("efgh");
 
     //mystring.StrCopy(mystring, mystring1);
     //if (mystring.StrEmpty(mystring))cout << "空\n"<< endl;
@@ -29,6 +29,6 @@ void SString_test()
     }*/
     //int result = mystring.StrLength(mystring);
     //cout << "字符串长度为：" << result << endl;
-    //mystring.StrConcat(mystring, mystring1, mystring2);
-    mystring1.PrintSString(mystring1);
+    mystring.StrConcat(mystring, mystring1, mystring2);
+    mystring.PrintSString(mystring);
 }

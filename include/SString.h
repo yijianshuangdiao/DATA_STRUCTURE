@@ -20,7 +20,7 @@ namespace SString
 
     public:
         SString();                                                  //构造函数，初始化串
-        void InitSString(const char *S, int len);                   //初始化串
+        void InitSString(const char *S);                            //初始化串
         void PrintSString(SString &S);                              //打印串
         bool StrCopy(SString &S, SString &T);                       //串拷贝
         bool StrEmpty(SString &S);                                  //判空
@@ -44,12 +44,12 @@ SString::SString<ElemType>::SString()
 }
 
 template <typename ElemType>
-void SString::SString<ElemType>::InitSString(const char *S, int len)
+void SString::SString<ElemType>::InitSString(const char *S)
 {
     int i = 0;
     while (S[i] != '\0')
     {
-        data[i] = S[i++];
+        data[i++] = S[i];
         lenght++;
     }
     data[lenght] = '\0';
@@ -60,7 +60,7 @@ void SString::SString<ElemType>::PrintSString(SString &S)
 {
     for (int i = 0; S.data[i] != '\0'; i++)
     {
-        std::cout << S.data[3] << " ";
+        std::cout << S.data[i] << " ";
     }
     std::cout << std::endl;
 }
@@ -120,12 +120,14 @@ void SString::SString<ElemType>::StrConcat(SString &S, SString &S1, SString &S2)
     int i = 0;
     while (S1.data[i] != '\0')
     {
-        S.data[i] = S1.data[i++];
+        S.data[i] = S1.data[i];
+        i++;
     }
     int j = 0;
     while (S2.data[j] != '\0')
     {
-        S.data[i + j] = S2.data[j++];
+        S.data[i + j] = S2.data[j];
+        j++;
     }
     S.data[i + j] = '\0';
 }
